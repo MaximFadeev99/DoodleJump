@@ -18,7 +18,8 @@ public class Patrolling : MonoBehaviour
 
         if ((Vector2) transform.position != newPosition && _isMovingRight == isMovingRight)
         {
-            transform.position = Vector2.MoveTowards((Vector2)transform.position, newPosition, patrollingSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards
+                ((Vector2)transform.position,newPosition, patrollingSpeed * Time.deltaTime);
         }
         else
         {
@@ -32,8 +33,10 @@ public class Patrolling : MonoBehaviour
         {
             float objectWidth = collision.gameObject.GetComponent<SpriteRenderer>().bounds.extents.x;
 
-            _rightWaypoint = new Vector2 (collision.transform.position.x + (objectWidth * 0.7f), transform.position.y);
-            _leftWaypoint = new Vector2 (collision.transform.position.x - (objectWidth * 0.7f), transform.position.y);
+            _rightWaypoint = new Vector2 
+                (collision.transform.position.x + (objectWidth * 0.7f), transform.position.y);
+            _leftWaypoint = new Vector2 
+                (collision.transform.position.x - (objectWidth * 0.7f), transform.position.y);
         }        
     }
 }
